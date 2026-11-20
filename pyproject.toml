@@ -1,0 +1,23 @@
+[project]
+name = "ensf519-g6-final-project"
+version = "0.1.0"
+description = "Robust diabetes classification from incomplete clinical data"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "kagglehub>=0.3,<1",
+    "numpy>=1.26,<3",
+    "pandas>=2.2,<3",
+    "scikit-learn>=1.5,<2",
+    "torch>=2.6,<3",
+]
+
+[project.scripts]
+diabetes-train = "diabetes_g6.train:main"
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/diabetes_g6"]
